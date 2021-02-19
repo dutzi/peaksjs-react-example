@@ -3,6 +3,7 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 import Peaks from 'peaks.js'
 
 import './WaveformView.css';
+import { createSegmentMarker } from './custom-segment-markers';
 
 // Props:
 //   audioUrl
@@ -77,7 +78,8 @@ class WaveformView extends Component {
       },
       mediaElement: this.audioElementRef.current,
       keyboard: true,
-      logger: console.error.bind(console)
+      logger: console.error.bind(console),
+      createSegmentMarker: createSegmentMarker
     };
 
     if (this.props.waveformDataUrl) {
